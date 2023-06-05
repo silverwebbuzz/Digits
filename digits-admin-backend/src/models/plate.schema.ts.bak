@@ -1,0 +1,16 @@
+import * as mongoose from 'mongoose';
+
+export const PlateSchema = new mongoose.Schema(
+  {
+    plate_number: { type: String, unique: true, required: false },
+    name: { type: String, required: false },
+    price: { type: String, required: true },
+    email: { type: String, unique: true, required: true },
+    phone: { type: String, required: true },
+    status: { type: String, required: true },
+    sell_status: { type: String, required: true },
+    seller_level: { type: String, required: true },
+    created_at: { type: Date, default: Date.now },
+  },
+  { versionKey: false },
+);
